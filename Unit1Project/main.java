@@ -154,9 +154,27 @@ public class main extends Nation{
     print("---------------------------------\n");
   }//close world report
 
-  static void turn(Nation [] Nations){
+  static Nation [] yourgo(Nations){
+    Scanner keyboard = new Scanner(System.in);
+    print("\n");
+    print("---------------------------------\n");
+    print("How would you like to proceed?\n");
+    print("1 - Boost Industry\n");
+    print("2 - Boost Culture\n");
+    print("3 - Boost Strength\n");
+    print("4 - Start War\n");
+    print("5 - Print Money\n")
+    print("Your choice (number): ");
+    String choice = keyboard.nextInt();
+    print("---------------------------------\n");
+    
+
+  }
+
+  static Nation [] turn(Nation [] Nations){
     //manage turn order
     report(Nations);
+    Nation [] Nations = yourgo(Nations);
   }
 
   public static void main(String[] args){

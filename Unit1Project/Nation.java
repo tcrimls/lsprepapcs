@@ -8,6 +8,7 @@ public class Nation{
   int industry = 100;
   int culture = 100;
   int health = 20;
-  String [] cities;
+  int modifier = 0;
+  int stability = strength + industry + culture + modifier;
 
 }
