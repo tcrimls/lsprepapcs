@@ -13,6 +13,8 @@ import java.lang.*;
 
 //actions
 //boost - for each 100 you spend, you can boost strength, industry, or culture//
+//start war
+//print money
 
 public class main extends Nation{
   static boolean gameon = true;//this is to check if the game should keep running
@@ -154,7 +156,8 @@ public class main extends Nation{
     print("---------------------------------\n");
   }//close world report
 
-  static Nation [] yourgo(Nations){
+  static Nation [] yourgo(Nation [] Nations){
+    Nation Player = Nations[3];
     Scanner keyboard = new Scanner(System.in);
     print("\n");
     print("---------------------------------\n");
@@ -163,18 +166,67 @@ public class main extends Nation{
     print("2 - Boost Culture\n");
     print("3 - Boost Strength\n");
     print("4 - Start War\n");
-    print("5 - Print Money\n")
+    print("5 - Print Money\n");
     print("Your choice (number): ");
-    String choice = keyboard.nextInt();
+    int choice = keyboard.nextInt();
     print("---------------------------------\n");
-    
+
+    if (choice == 1){
+      boostInd(Nations);
+    }
+    if (choice == 2){
+      boostCul(Nations);
+    }
+    if (choice == 3){
+      boostStr(Nations);
+    }
+    if (choice == 4){
+      Nation[3] = printMoney(Player);
+    }
+    if (choice == 5){
+      startWar(Nations);
+    }
+    return Nations;
+  }
+
+
+  static void boostInd(Nation [] Nations){
+    print("1");
+  }
+
+  static void boostCul(Nation [] Nations){
+    print("2");
+  }
+
+  static void boostStr(Nation [] Nations){
+    print("3");
+  }
+
+  static Nation printMoney(Nation Player){
+    Scanner keyboard = new Scanner(System.in);
+    print("\n");
+    print("---------------------------------\n");
+    print("Print Money\n");
+    print("\n");
+    print("Enter amount:")
+    int amount = keyboard.nextInt();
+    Player.money += amount;
+    //stability goes WAYYY down//
+
 
   }
+
+  static void startWar(Nation [] Nations){
+    print("5");
+  }
+
+
 
   static Nation [] turn(Nation [] Nations){
     //manage turn order
     report(Nations);
-    Nation [] Nations = yourgo(Nations);
+    Nations = yourgo(Nations);
+    return Nations;
   }
 
   public static void main(String[] args){
